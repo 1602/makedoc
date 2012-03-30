@@ -12,11 +12,22 @@ Super-tiny, not pretending to be complete static html documentation generator. A
 
 will create `./doc/code.html` and `./doc/file.html`
 
-You also can specify title of page using `-t` option.
+    makedoc lib/*.js
+    
+will process whole `lib` directory.
+
+Other options:
+
+    -t title               # specify title for docs
+    -g githubname/reponame # specify github repo
+    -d lib                 # download files from lib folder of github hosted project
+    -o ./docs              # specify output dir (by defaulf ./doc)
+
+more features coming soon.
 
 ## How my code should look like?
 
-Absolutely situable question. First of all it should be zero-indented:
+First of all it should be zero-indented:
 
 ```
 /**
@@ -40,10 +51,9 @@ will work, but
         console.log(someArgument);
     }
 })();
+```
 
 would not. Why? Because I'm too lazy, and 80% of my code met this requirement, rest of code (20%)... Hmmm. I don't like this code, I think it should be rewritten to be more flat, more clean, more obvious.
-
-Another requirement: file should contain some documented Constructor: function with name started with capital letter. Only **one** constructor per file!
 
 ## How does it work?
 
