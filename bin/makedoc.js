@@ -12,23 +12,33 @@ var argv = require('optimist')
     .alias('d', 'download')
     .describe('d', 'Download files from github public repo')
 
-    .argv
+    .alias('o', 'out')
+    .describe('o', 'Specify output dir. By default ./doc')
+
+    .argv;
 
 var title = argv.t;
 var git = argv.g;
+var out = argv.o || './doc/';
+var md = require('../lib/doc');
+var Project = require('../lib/project');
+var path = require('path');
+
+var p = new Project;
+p.title = title || 'API Docs';
+p.repo = git;
 
 if (argv.d && git) {
-    require('../lib/downloader').download('/' + git + '/tree/master/' + argv.d, function (files) {
-        files.forEach(generate);
-    });
+    p.download(argv.d, p.makeDocumentation.bind(p));
 } else {
-    argv._.forEach(generate);
+    p.readFiles(argv._, p.makeDocumentation.bind(p));
 }
 
 function generate(file) {
-    require('../lib/doc').generateFile(file, {
+    md.generateFile(file, {
         title: title,
-        git: git
+        git: git,
+        out: out
     });
 }
 
