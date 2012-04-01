@@ -34,11 +34,3 @@ if (argv.d && git) {
     p.readFiles(argv._, p.makeDocumentation.bind(p));
 }
 
-function generate(file) {
-    md.generateFile(file, {
-        title: title,
-        git: git,
-        out: out
-    });
-}
-
