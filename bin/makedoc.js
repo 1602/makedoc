@@ -20,7 +20,6 @@ var argv = require('optimist')
 var title = argv.t;
 var git = argv.g;
 var out = argv.o || './doc/';
-var md = require('../lib/doc');
 var Project = require('../lib/project');
 var path = require('path');
 
