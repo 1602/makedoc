@@ -25,36 +25,6 @@ Other options:
 
 more features coming soon.
 
-## How my code should look like?
-
-First of all it should be zero-indented:
-
-```
-/**
- * Method description
- * @param {String} someArgument - some awesome argument
- */
-function someMethod(someArgument) {
-    console.log(someArgument);
-}
-```
-
-will work, but
-
-```
-(function () {
-    /**
-     * Method description
-     * @param {String} someArgument - some awesome argument
-     */
-    function someMethod(someArgument) {
-        console.log(someArgument);
-    }
-})();
-```
-
-would not. Why? Because I'm too lazy, and 80% of my code met this requirement, rest of code (20%)... Hmmm. I don't like this code, I think it should be rewritten to be more flat, more clean, more obvious.
-
 ## How does it work?
 
 makedoc looking for `/**` started comment, then wait for `*/` and check next line, if it ends with `{`, grab all following lines unless `\n}`. That's it.
