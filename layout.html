@@ -9,6 +9,33 @@
           h3 .icon { margin-top: 4px !important;}
           li {line-height: 21px;}
           .navbar .container { width: 940px; }
+          .sidenav i {
+            float: right;
+            margin-top: 2px;
+            margin-right: -6px;
+          }
+          .sidenav > li.nav-header {
+            background-color: #eee;
+          }
+          .sidenav > li.nav-header,
+          .sidenav > li > a {
+            display: block;
+            margin: 0 0 -1px;
+            padding: 8px 14px;
+            border: 1px solid #e5e5e5;
+          }
+          .sidenav > li.nav-header:first-child,
+          .sidenav > li:first-child > a {
+            -webkit-border-radius: 6px 6px 0 0;
+            -moz-border-radius: 6px 6px 0 0;
+            border-radius: 6px 6px 0 0;
+          }
+          .sidenav > li:last-child > a {
+            -webkit-border-radius: 0 0 6px 6px;
+            -moz-border-radius: 0 0 6px 6px;
+            border-radius: 0 0 6px 6px;
+          }
+
         </style>
     </head>
     <body>
@@ -24,11 +51,12 @@
       </div>
       <div class="container">
         <div class="row">
-          <div class="span9">
-            BODY
-          </div>
           <div class="span3">
             SIDEBAR
+            &nbsp;
+          </div>
+          <div class="span9">
+            BODY
           </div>
         </div>
     </body>
