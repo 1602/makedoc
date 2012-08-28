@@ -2,7 +2,7 @@
   "author": "Anatoliy Chakkaev <rpm1602@gmail.com>",
   "name": "makedoc",
   "description": "Tiny jsdoc generator",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "repository": {
     "url": ""
   },
