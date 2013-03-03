@@ -27,6 +27,9 @@ var argv = optimist
     .alias('a', 'assets')
     .describe('a', 'Copy assets to $DOC_ROOT/assets')
 
+    .alias('v', 'version')
+    .describe('v', 'Display version information and quit')
+
     .argv;
 
 var title = argv.t;
@@ -45,6 +48,9 @@ if (argv.d && git) {
 } else if (argv._.length) {
     console.log('Generating docs local files');
     p.readFiles(argv._, p.makeDocumentation.bind(p));
+} else if (argv.v) {
+    process.versions.makedoc = require(__dirname + '/../package.json').version;
+    console.log(process.versions);
 } else {
     optimist.showHelp();
 }
