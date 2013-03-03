@@ -23,7 +23,7 @@ var out = argv.o || './doc/';
 var Project = require('../lib/project');
 var path = require('path');
 
-var p = new Project;
+var p = new Project(process.cwd());
 p.title = title || 'API Docs';
 p.repo = git;
 
